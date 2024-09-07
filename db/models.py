@@ -49,3 +49,19 @@ class Transaction(Base):
 
     card_from_fk = relationship(Card, lazy="subquery", foreign_keys=[card_from])
     card_to_fk = relationship(Card, lazy="subquery", foreign_keys=[card_to])
+
+
+class CorporativeClients(Base):
+    __tablename__="corporative_clients"
+
+    id = Column(Integer, autoincrement=True, primary_key=True)
+    company= Column(String,nullable=False)
+    type_of_bussiness=Column(String,nullable=False)
+
+
+class Countries(Base):
+    __tablename__ = "countrise"
+
+    country_id = Column(Integer, autoincrement=True, primary_key=True)
+    which_country=Column(String,nullable=False)
+    countries_with_bonus=Column(String, nullable=False,default="Uzbekistan,Zimbabve")
