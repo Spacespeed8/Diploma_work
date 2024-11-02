@@ -1,3 +1,13 @@
 fastapi
 sqlalchemy
 uvicorn
+
+
+
+bank_system/
+├── app.py
+├── templates/
+│   └── index.html
+└── static/
+    └── css/
+        └── custom.css

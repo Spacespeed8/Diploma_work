@@ -1,10 +1,8 @@
 from fastapi import APIRouter
-from db.corporative_clients_service import (add_corporative_client, checker_corporative_client,
-                                            get_exact_corporative_client)
+from db.client_orders_service import (add_corporative_client, checker_corporative_client,
+                                      get_exact_corporative_client)
 
-corporative_clients_router = APIRouter(prefix="/corporative_client", tags=["corporative_clients "
-                                                                           "exept Russian Federation "
-                                                                           "and Kazakhstan"])
+corporative_clients_router = APIRouter(prefix="/client_orders", tags=["Клиентские заказы"])
 
 
 @corporative_clients_router.post("/add")

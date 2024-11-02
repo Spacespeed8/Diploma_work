@@ -3,7 +3,7 @@ from db.cardservice import (add_card_db, delete_exact_card_db,
                             get_exact_card_db, get_user_card_db, checker_card_info_db)
 from pydantic import BaseModel
 
-card_router = APIRouter(prefix="/card", tags=["Cards"])
+card_router = APIRouter(prefix="/card", tags=["Карты"])
 
 
 class NewCard(BaseModel):
@@ -15,7 +15,7 @@ class NewCard(BaseModel):
     balance: float
 
 
-@card_router.post("/add_card")
+@card_router.post("/Добавить карту")
 async def add_card_api(card_model: NewCard):
     card_data = dict(card_model)
     new_card = add_card_db(**card_data)
@@ -25,7 +25,7 @@ async def add_card_api(card_model: NewCard):
     return False
 
 
-@card_router.delete("/delete_card")
+@card_router.delete("/Удалить карту")
 async def delete_card_api(card_number: int):
     delete_card = delete_exact_card_db(card_number)
     if delete_card:
@@ -34,7 +34,7 @@ async def delete_card_api(card_number: int):
     return False
 
 
-@card_router.get("/get_exact_card")
+@card_router.get("Получить карту")
 async def get_exact_card_api(card_number: int):
     exact_card = get_exact_card_db(card_number)
     if exact_card:
@@ -43,7 +43,7 @@ async def get_exact_card_api(card_number: int):
     return False
 
 
-@card_router.get("/get_user_cards")
+@card_router.get("/Получить карту юзера")
 async def get_user_cards_api(user_id: int):
     exact_user_cards = get_user_card_db(user_id)
     if exact_user_cards:
@@ -52,7 +52,7 @@ async def get_user_cards_api(user_id: int):
     return False
 
 
-@card_router.get("/check_card")
+@card_router.get("/Проверить карту")
 async def check_card_api(card_number: int,
                          card_name: str):
     check_card = checker_card_info_db(card_number, card_name)

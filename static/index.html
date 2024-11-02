@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карты с доставкой</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #2b2b2b;
+        }
+        .card {
+            background-color: #ffffff;
+            padding: 20px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .card img {
+            max-width: 120px;
+        }
+        .card-info {
+            flex: 1;
+            margin-left: 15px;
+        }
+        .card-title {
+            font-weight: bold;
+            color: #2b2b2b;
+        }
+        .card-details {
+            color: #555;
+            margin: 5px 0;
+        }
+        .details-button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .details-button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Карты с доставкой</h1>
+
+        <!-- Kapitalbank Card -->
+        <div class="card">
+            <img src="https://via.placeholder.com/120" alt="Kapitalbank Visa Classic">
+            <div class="card-info">
+                <div class="card-title">Kapitalbank</div>
+                <div class="card-details">Карта "Visa Classic"</div>
+                <div class="card-details">долл. США | Visa</div>
+            </div>
+            <a href="{{ url_for('details') }}" class="details-button">Подробнее</a>
+        </div>
+
+        <!-- Asia Alliance Bank Card -->
+        <div class="card">
+            <img src="https://via.placeholder.com/120" alt="Asia Alliance Bank Visa Classic Travel">
+            <div class="card-info">
+                <div class="card-title">Asia Alliance Bank</div>
+                <div class="card-details">Visa Classic Travel</div>
+                <div class="card-details">долл. США | Visa</div>
+            </div>
+            <a href=".html" class="details-button">Подробнее</a>
+        </div>
+
+        <!-- Ipak Yo'li Bank Card -->
+        <div class="card">
+            <img src="https://via.placeholder.com/120" alt="Ipak Yo'li Bank Mastercard Platinum">
+            <div class="card-info">
+                <div class="card-title">Ipak Yo'li Banki</div>
+                <div class="card-details">Карта "Mastercard Platinum"</div>
+                <div class="card-details">долл. США | MasterCard</div>
+            </div>
+            <a href="yol.html" class="details-button">Подробнее</a>
+        </div>
+    </div>
+</body>
+</html>

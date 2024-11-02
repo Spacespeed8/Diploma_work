@@ -4,7 +4,7 @@ from db.transactionservice import (cancel_transfer_db,
                                    get_card_transfer_db)
 from pydantic import BaseModel
 
-transfer_router = APIRouter(prefix="/transfer", tags=["Transfer"])
+transfer_router = APIRouter(prefix="/transfer", tags=["Трансферы"])
 
 
 class NewTransfer(BaseModel):
@@ -13,7 +13,7 @@ class NewTransfer(BaseModel):
     amount: float
 
 
-@transfer_router.post("/create_transfer")
+@transfer_router.post("/Сделать Трансфер")
 async def create_transfer_api(transfer_model: NewTransfer):
     transfer_data = dict(transfer_model)
     new_transfer = create_transaction_db(**transfer_data)
@@ -23,7 +23,7 @@ async def create_transfer_api(transfer_model: NewTransfer):
     return False
 
 
-@transfer_router.delete("/cancel_transfer")
+@transfer_router.delete("/Отменить трансфер")
 async def cancel_transfer_api(transfer_id: int):
     delete_transfer = cancel_transfer_db(transfer_id)
     if delete_transfer:
@@ -32,7 +32,7 @@ async def cancel_transfer_api(transfer_id: int):
     return False
 
 
-@transfer_router.get("/get_transfer_card")
+@transfer_router.get("/Получить трансферную карту")
 async def get_transfer_card_api(card_number: int):
     get_transfer_card = get_card_transfer_db(card_number)
     if get_transfer_card:
